@@ -1,0 +1,162 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Starter Pack
+    Author: RHJ Themes
+    Author URI: https://rh-jewel.com/
+    Support: https://rh-jewel.com/support/
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+    01.Template Common
+    02.
+    03.
+    04.
+    05.
+    06.
+    07.
+    08.
+    09.
+    10.
+    11.
+    12.
+    13.
+    14.
+    15.
+
+-----------------------------------------------------------------------------------*/
+/*===========================
+     01.COMMON CSS 
+===========================*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --pri-color: #FFCA42;
+  --sec-color: #1B3764;
+  --font-1: "Open Sans", sans-serif;
+  --font-2: "Raleway", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0 solid;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: var(--font-2);
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: #787878;
+  line-height: 1.8;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+input,
+select,
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/* Padding, Margin short class */
+.sec-pad {
+  padding: 120px 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .sec-pad {
+    padding: 80px 0;
+  }
+}
+
+.sec-pad-top {
+  padding-top: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .sec-pad-top {
+    padding-top: 80px;
+  }
+}
+
+.sec-pad-bottom {
+  padding-bottom: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .sec-pad-bottom {
+    padding-bottom: 80px;
+  }
+}
+
+.sec-mar {
+  margin: 120px 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .sec-mar {
+    margin: 80px 0;
+  }
+}
+
+.sec-mar-top {
+  margin-top: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .sec-mar-top {
+    margin-top: 80px;
+  }
+}
+
+.sec-mar-bottom {
+  margin-bottom: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .sec-mar-bottom {
+    margin-bottom: 80px;
+  }
+}/*# sourceMappingURL=style.css.map */
