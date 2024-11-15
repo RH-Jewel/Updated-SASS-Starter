@@ -2,13 +2,20 @@
      01.COMMON CSS 
 ===========================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 
 :root {
-    --pri-color: #FFCA42;
-    --sec-color: #1B3764;
-    --font-1: 'Open Sans', sans-serif;
-    --font-2: 'Raleway', sans-serif;
+    // Color 
+    --white: #FFFFFF;
+    --off-white: #EFEFEF;
+    --black: #000000;
+    --pri-color: #FF2150;
+    --title-color: #202020;
+    --sub-title-color: #b0b0b0;
+    --border-light: #EEEEEE;
+    // Fonts 
+    --font-main: "Poppins", serif;
 }
 
 * {
@@ -31,7 +38,7 @@ body {
 
 body {
     font-size: 16px;
-    font-family: var(--font-1);
+    font-family: var(--font-main);
 }
 
 h1,
@@ -42,14 +49,14 @@ h5,
 h6 {
     font-weight: 700;
     margin-bottom: 15px;
-    font-family: var(--font-2);
+    color: var(--title-color);
+    font-family: var(--font-main);
 }
 
 img {
     max-width: 100%;
 }
 
-a,
 ul,
 ol {
     padding: 0;
@@ -59,7 +66,6 @@ ol {
 p {
     margin: 0;
     color: #787878;
-    line-height: 1.8;
 }
 
 a,
@@ -124,5 +130,66 @@ video {
 
     @media #{$md,$xs} {
         margin-bottom: 80px;
+    }
+}
+
+.title {
+    margin-bottom: 70px;
+
+    span {
+        display: block;
+        font-size: 16px;
+        color: var(--sub-title-color);
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--title-color);
+        font-family: var(--font-main);
+        margin-bottom: 0;
+
+        b {
+            color: var(--pri-color);
+        }
+    }
+}
+
+// common btn css
+.btn-fill {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    padding: 12px 20px;
+    min-width: 150px;
+    text-align: center;
+    border: 1px solid var(--black);
+    background-color: var(--black);
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all .5s;
+    overflow: hidden;
+
+    &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        background-color: var(--pri-color);
+        transition: all .5s;
+        z-index: -1;
+    }
+
+    &:hover {
+        background: transparent;
+        border-color: var(--pri-color);
+
+        &::before {
+            left: 0;
+        }
     }
 }

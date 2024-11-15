@@ -6,7 +6,6 @@
     transition: all $time ease-out 0s;
 }
 
-
 @mixin transform($value) {
     -webkit-transform: $value;
     -moz-transform: $value;
@@ -22,13 +21,11 @@
     user-select: $value;
 }
 
-
 @mixin box-sizing($value) {
     -webkit-box-sizing: $value;
     -moz-box-sizing: $value;
     box-sizing: $value;
 }
-
 
 @mixin animation($value) {
     -webkit-animation: $value;
@@ -37,7 +34,6 @@
     animation: $value;
 }
 
-
 @mixin animation-delay($value) {
     -webkit-animation-delay: $value;
     -moz-animation-delay: $value;
@@ -45,14 +41,11 @@
     animation-delay: $value;
 }
 
-
-
 @mixin box-shadow($value) {
     -webkit-box-shadow: $value;
     -moz-box-shadow: $value;
     box-shadow: $value;
 }
-
 
 // Placeholder Mixins
 @mixin placeholder {
