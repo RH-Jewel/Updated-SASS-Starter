@@ -463,7 +463,85 @@ section.hero-area {
 // End about-area SCSS
 
 // portfolio-area  SCSS
+
 .portfolio-area {
+
+    .portfolio-menu {
+        margin-bottom: 60px;
+
+        li {
+            position: relative;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
+            padding: 0 20px;
+            line-height: 1;
+            cursor: pointer;
+            @include transition(.5s);
+
+
+            @media #{$sm} {
+                font-size: 14px;
+            }
+
+            @media #{$xs} {
+                font-size: 12px;
+                padding: 0 15px;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                border: 1px solid #111;
+                width: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -5px;
+                @include transition(.5s);
+            }
+
+            i {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &:hover i {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &:hover {
+                color: var(--pri-color);
+            }
+
+            &:hover:after {
+                border: 1px solid var(--pri-color);
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child:after {
+                border: none;
+            }
+
+            &.active {
+                color: var(--pri-color);
+            }
+
+            &.active i {
+                visibility: visible;
+                opacity: 1;
+                color: var(--pri-color);
+            }
+
+            &.active:after {
+                border: 1px solid var(--pri-color);
+            }
+        }
+    }
 
     .single-project {
         position: relative;
@@ -491,8 +569,35 @@ section.hero-area {
             @include transition(.5s);
             background: linear-gradient(to left top, transparent 50%, rgba(0, 0, 0, .4) 0) no-repeat 100% 100% / 2em 2em,
                 linear-gradient(-45deg, transparent 1.41em, var(--white) 0);
+            visibility: hidden;
+            opacity: 0;
 
-            .cat {
+            .icons {
+                position: absolute;
+                bottom: 0;
+                @include transition(.5s);
+
+                a {
+                    height: 30px;
+                    width: 30px;
+                    background-color: var(--pri-color);
+                    line-height: 30px;
+                    text-align: center;
+                    display: inline-block;
+                    color: #fff;
+
+                    svg {
+                        fill: #EDF1FC;
+                        height: 15px;
+                    }
+                }
+            }
+
+            .info {
+                position: absolute;
+                top: 0;
+                @include transition(.5s);
+
                 a {
                     font-size: 14px;
                     text-transform: uppercase;
@@ -508,33 +613,36 @@ section.hero-area {
                         margin-right: 5px;
                     }
                 }
-            }
 
-            h4 {
-                margin-top: 10px;
-                margin-bottom: 0;
+                h4 {
+                    margin-bottom: 0;
 
-                a {
-                    color: var(--title-color);
-                    font-size: 20px;
-                    font-weight: 500;
-                    text-transform: capitalize;
+                    a {
+                        color: var(--title-color);
+                        font-size: 20px;
+                        font-weight: 500;
+                        text-transform: capitalize;
 
-                    @media #{$md} {
-                        font-size: 18px;
+                        @media #{$md} {
+                            font-size: 18px;
+                        }
                     }
                 }
             }
-
-            visibility: hidden;
-            opacity: 0;
         }
 
         &:hover {
             .project-inner {
                 visibility: visible;
                 opacity: .9;
-                padding-bottom: 50px;
+
+                .icons {
+                    bottom: 20px;
+                }
+
+                .info {
+                    top: 20px;
+                }
             }
         }
 
@@ -542,7 +650,15 @@ section.hero-area {
             .project-inner {
                 visibility: visible;
                 opacity: .9;
-                padding-bottom: 50px;
+
+                .icons {
+                    bottom: 20px;
+                }
+
+                .info {
+                    position: absolute;
+                    top: 20px;
+                }
 
             }
         }
@@ -832,8 +948,93 @@ section.hero-area {
 
 // End brand-partner SCSS
 
-// Common SCSS
-// End Common SCSS
+// work-process SCSS
+.work-process {}
+
+.work-process-card {
+    position: relative;
+    max-height: 350px;
+    padding: 30px 25px;
+    border-radius: 5px;
+    background-color: #fff;
+    background-image: linear-gradient(180deg, rgba(237, 241, 252, 0.38) 0%, rgba(201, 215, 255, 0.13) 100%);
+    overflow: hidden;
+}
+
+.work-process-card:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(180deg, rgba(237, 241, 252, 0) 0%, rgba(237, 241, 252, 0.76) 26.46%, #EDF1FC 45.7%);
+    z-index: 1;
+}
+
+.work-process-card span {
+    color: var(--pri-color);
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: var(--pri-color);
+    opacity: .8;
+}
+
+.work-process-card h4 {
+    color: var(--title-color);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.work-process-card p {
+    color: #3f444b;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.work-process-card ul li {
+    color: #3f444b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.work-process-card ul li strong {
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.work-process-card ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.work-process-card ul li:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--title-color);
+}
+
+// End work-process SCSS
 
 // Common SCSS
 // End Common SCSS
