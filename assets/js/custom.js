@@ -64,16 +64,17 @@
     });
 
     var swiper = new Swiper(".testimonial-slider", {
-        slidesPerView: 1,
+        slidesPerView: 2,
+        spaceBetween: 30,
         loop: true,
         watchSlidesProgress: true,
         navigation: {
             nextEl: ".review-next",
             prevEl: ".review-prev",
         },
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
     });
 
 

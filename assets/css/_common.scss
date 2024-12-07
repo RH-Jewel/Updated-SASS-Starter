@@ -64,7 +64,6 @@ ol {
 }
 
 p {
-    margin: 0;
     color: #787878;
 }
 
@@ -171,6 +170,7 @@ video {
     border-radius: 3px;
     transition: all .5s;
     overflow: hidden;
+    z-index: 1;
 
     &:before {
         position: absolute;
@@ -191,5 +191,63 @@ video {
         &::before {
             left: 0;
         }
+    }
+}
+
+//Breadcrumbs scss
+.breadcrumbs {
+    background-image: url(../../assets/img/breadcrumb-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 450px;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    .breadcrumb-content {
+        height: calc(450px + 110px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        h2 {
+            font-size: 50px;
+            color: #fff;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .page-backlink {
+            margin: 10px 0 20px 0;
+
+            span {
+                color: #fff;
+                font-size: 15px;
+                text-transform: capitalize;
+
+                a {
+                    color: #000;
+                    font-weight: 500;
+                }
+
+                i {
+                    font-size: 12px;
+                    vertical-align: middle;
+                }
+            }
+        }
+
     }
 }
